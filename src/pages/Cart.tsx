@@ -2,9 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Minus, Plus, Trash2, ShoppingBag, ArrowLeft } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import { useApp } from '../context/AppContext';
+import { convertPrice, formatPrice } from '../utils/currency';
 
 const Cart: React.FC = () => {
   const { state, dispatch } = useCart();
+  const { state: appState } = useApp();
 
   const updateQuantity = (id: string, quantity: number) => {
     dispatch({ type: 'UPDATE_QUANTITY', payload: { id, quantity } });
@@ -17,6 +20,16 @@ const Cart: React.FC = () => {
   const clearCart = () => {
     dispatch({ type: 'CLEAR_CART' });
   };
+
+  // Calculate totals with currency conversion
+  const subtotal = state.items.reduce((sum, item) => {
+    const convertedPrice = convertPrice(item.product.price, 'USD', appState.currency);
+    return sum + (convertedPrice * item.quantity);
+  }, 0);
+  
+  const shipping = subtotal > 50 ? 0 : 9.99;
+  const tax = subtotal * 0.08;
+  const total = subtotal + shipping + tax;
 
   if (state.items.length === 0) {
     return (
@@ -67,51 +80,56 @@ const Cart: React.FC = () => {
             </div>
 
             <div className="space-y-4">
-              {state.items.map((item) => (
-                <div key={item.product.id} className="bg-white p-6 rounded-xl shadow-lg">
-                  <div className="flex items-center space-x-4">
-                    <img
-                      src={item.product.image}
-                      alt={item.product.name}
-                      className="w-20 h-20 object-cover rounded-lg"
-                    />
-                    
-                    <div className="flex-1">
-                      <h3 className="text-lg font-semibold text-gray-900">{item.product.name}</h3>
-                      <p className="text-gray-600">{item.product.brand}</p>
-                      <p className="text-xl font-bold text-gray-900">${item.product.price}</p>
-                    </div>
+              {state.items.map((item) => {
+                const convertedPrice = convertPrice(item.product.price, 'USD', appState.currency);
+                return (
+                  <div key={item.product.id} className="bg-white p-6 rounded-xl shadow-lg">
+                    <div className="flex items-center space-x-4">
+                      <img
+                        src={item.product.image}
+                        alt={item.product.name}
+                        className="w-20 h-20 object-cover rounded-lg"
+                      />
+                      
+                      <div className="flex-1">
+                        <h3 className="text-lg font-semibold text-gray-900">{item.product.name}</h3>
+                        <p className="text-gray-600">{item.product.brand}</p>
+                        <p className="text-xl font-bold text-gray-900">
+                          {formatPrice(convertedPrice, appState.currency)}
+                        </p>
+                      </div>
 
-                    <div className="flex items-center space-x-3">
-                      <button
-                        onClick={() => updateQuantity(item.product.id, item.quantity - 1)}
-                        className="p-2 text-gray-600 hover:text-gray-800 border border-gray-300 rounded-lg"
-                      >
-                        <Minus className="h-4 w-4" />
-                      </button>
-                      <span className="text-lg font-semibold w-8 text-center">{item.quantity}</span>
-                      <button
-                        onClick={() => updateQuantity(item.product.id, item.quantity + 1)}
-                        className="p-2 text-gray-600 hover:text-gray-800 border border-gray-300 rounded-lg"
-                      >
-                        <Plus className="h-4 w-4" />
-                      </button>
-                    </div>
+                      <div className="flex items-center space-x-3">
+                        <button
+                          onClick={() => updateQuantity(item.product.id, item.quantity - 1)}
+                          className="p-2 text-gray-600 hover:text-gray-800 border border-gray-300 rounded-lg"
+                        >
+                          <Minus className="h-4 w-4" />
+                        </button>
+                        <span className="text-lg font-semibold w-8 text-center">{item.quantity}</span>
+                        <button
+                          onClick={() => updateQuantity(item.product.id, item.quantity + 1)}
+                          className="p-2 text-gray-600 hover:text-gray-800 border border-gray-300 rounded-lg"
+                        >
+                          <Plus className="h-4 w-4" />
+                        </button>
+                      </div>
 
-                    <div className="text-right">
-                      <p className="text-xl font-bold text-gray-900">
-                        ${(item.product.price * item.quantity).toFixed(2)}
-                      </p>
-                      <button
-                        onClick={() => removeItem(item.product.id)}
-                        className="mt-2 text-red-600 hover:text-red-700 transition-colors"
-                      >
-                        <Trash2 className="h-5 w-5" />
-                      </button>
+                      <div className="text-right">
+                        <p className="text-xl font-bold text-gray-900">
+                          {formatPrice(convertedPrice * item.quantity, appState.currency)}
+                        </p>
+                        <button
+                          onClick={() => removeItem(item.product.id)}
+                          className="mt-2 text-red-600 hover:text-red-700 transition-colors"
+                        >
+                          <Trash2 className="h-5 w-5" />
+                        </button>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 
@@ -123,27 +141,32 @@ const Cart: React.FC = () => {
               <div className="space-y-4 mb-6">
                 <div className="flex justify-between">
                   <span className="text-gray-600">Subtotal</span>
-                  <span className="font-semibold">${state.total.toFixed(2)}</span>
+                  <span className="font-semibold">{formatPrice(subtotal, appState.currency)}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Shipping</span>
-                  <span className="font-semibold">Free</span>
+                  <span className="font-semibold">
+                    {shipping === 0 ? 'Free' : formatPrice(shipping, appState.currency)}
+                  </span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Tax</span>
-                  <span className="font-semibold">${(state.total * 0.08).toFixed(2)}</span>
+                  <span className="font-semibold">{formatPrice(tax, appState.currency)}</span>
                 </div>
                 <div className="border-t pt-4">
                   <div className="flex justify-between text-lg font-bold">
                     <span>Total</span>
-                    <span>${(state.total * 1.08).toFixed(2)}</span>
+                    <span>{formatPrice(total, appState.currency)}</span>
                   </div>
                 </div>
               </div>
 
-              <button className="w-full bg-blue-600 text-white py-4 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors mb-4">
+              <Link
+                to="/checkout"
+                className="w-full bg-blue-600 text-white py-4 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors mb-4 block text-center"
+              >
                 Proceed to Checkout
-              </button>
+              </Link>
 
               <div className="text-center text-sm text-gray-600">
                 <p>Free shipping on orders over $50</p>

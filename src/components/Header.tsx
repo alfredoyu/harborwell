@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Search, ShoppingCart, Globe, DollarSign, Menu, X } from 'lucide-react';
+import { Search, ShoppingCart, Globe, DollarSign, Menu, X, Package } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useApp } from '../context/AppContext';
 import { getTranslation } from '../utils/translations';
@@ -110,6 +110,11 @@ const Header: React.FC = () => {
               </select>
               <DollarSign className="absolute right-2 top-1.5 h-4 w-4 text-gray-400 pointer-events-none" />
             </div>
+
+            {/* Orders */}
+            <Link to="/orders" className="p-2 text-gray-700 hover:text-blue-600 transition-colors">
+              <Package className="h-6 w-6" />
+            </Link>
 
             {/* Cart */}
             <Link to="/cart" className="relative p-2 text-gray-700 hover:text-blue-600 transition-colors">
