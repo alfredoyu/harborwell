@@ -1,0 +1,295 @@
+import React, { useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { Star, ShoppingCart, Heart, Share2, CheckCircle, AlertCircle, ArrowLeft } from 'lucide-react';
+import { products } from '../data/products';
+import { useCart } from '../context/CartContext';
+
+const ProductDetail: React.FC = () => {
+  const { id } = useParams<{ id: string }>();
+  const product = products.find(p => p.id === id);
+  const [quantity, setQuantity] = useState(1);
+  const [activeTab, setActiveTab] = useState('description');
+  const { dispatch } = useCart();
+
+  if (!product) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Product Not Found</h2>
+          <Link to="/products" className="text-blue-600 hover:text-blue-700">
+            Back to Products
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  const handleAddToCart = () => {
+    dispatch({
+      type: 'ADD_ITEM',
+      payload: { product, quantity }
+    });
+  };
+
+  const tabs = [
+    { id: 'description', label: 'Description' },
+    { id: 'ingredients', label: 'Ingredients' },
+    { id: 'usage', label: 'Usage & Dosage' },
+    { id: 'reviews', label: 'Reviews' }
+  ];
+
+  return (
+    <div className="min-h-screen bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Breadcrumb */}
+        <nav className="flex items-center space-x-2 text-sm text-gray-600 mb-8">
+          <Link to="/" className="hover:text-blue-600">Home</Link>
+          <span>/</span>
+          <Link to="/products" className="hover:text-blue-600">Products</Link>
+          <span>/</span>
+          <span className="text-gray-900">{product.name}</span>
+        </nav>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* Product Images */}
+          <div className="space-y-4">
+            <div className="aspect-square bg-gray-100 rounded-xl overflow-hidden">
+              <img
+                src={product.image}
+                alt={product.name}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="grid grid-cols-4 gap-2">
+              {product.images.map((image, index) => (
+                <div key={index} className="aspect-square bg-gray-100 rounded-lg overflow-hidden cursor-pointer hover:ring-2 hover:ring-blue-500">
+                  <img
+                    src={image}
+                    alt={`${product.name} ${index + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Product Info */}
+          <div className="space-y-6">
+            <div>
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-blue-600 font-medium">{product.brand}</span>
+                <div className="flex items-center space-x-2">
+                  <button className="p-2 text-gray-400 hover:text-red-500 transition-colors">
+                    <Heart className="h-5 w-5" />
+                  </button>
+                  <button className="p-2 text-gray-400 hover:text-blue-500 transition-colors">
+                    <Share2 className="h-5 w-5" />
+                  </button>
+                </div>
+              </div>
+              <h1 className="text-3xl font-bold text-gray-900 mb-4">{product.name}</h1>
+              
+              <div className="flex items-center space-x-4 mb-4">
+                <div className="flex items-center space-x-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star
+                      key={i}
+                      className={`h-5 w-5 ${
+                        i < Math.floor(product.rating)
+                          ? 'fill-yellow-400 text-yellow-400'
+                          : 'text-gray-300'
+                      }`}
+                    />
+                  ))}
+                  <span className="text-gray-600 ml-2">({product.reviews} reviews)</span>
+                </div>
+                <span className="text-gray-600">{product.sales} sold</span>
+              </div>
+
+              <div className="flex items-center space-x-4 mb-6">
+                <span className="text-3xl font-bold text-gray-900">${product.price}</span>
+                {product.originalPrice && (
+                  <span className="text-xl text-gray-500 line-through">${product.originalPrice}</span>
+                )}
+                {product.originalPrice && (
+                  <span className="bg-red-100 text-red-800 px-2 py-1 rounded-full text-sm font-medium">
+                    Save ${(product.originalPrice - product.price).toFixed(2)}
+                  </span>
+                )}
+              </div>
+            </div>
+
+            {/* Stock Status */}
+            <div className="flex items-center space-x-2">
+              {product.inStock ? (
+                <>
+                  <CheckCircle className="h-5 w-5 text-green-500" />
+                  <span className="text-green-600 font-medium">In Stock</span>
+                </>
+              ) : (
+                <>
+                  <AlertCircle className="h-5 w-5 text-red-500" />
+                  <span className="text-red-600 font-medium">Out of Stock</span>
+                </>
+              )}
+            </div>
+
+            {/* Quantity and Add to Cart */}
+            <div className="space-y-4">
+              <div className="flex items-center space-x-4">
+                <label className="text-gray-700 font-medium">Quantity:</label>
+                <div className="flex items-center border border-gray-300 rounded-lg">
+                  <button
+                    onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                    className="px-3 py-2 text-gray-600 hover:text-gray-800"
+                  >
+                    -
+                  </button>
+                  <span className="px-4 py-2 border-x border-gray-300">{quantity}</span>
+                  <button
+                    onClick={() => setQuantity(quantity + 1)}
+                    className="px-3 py-2 text-gray-600 hover:text-gray-800"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+
+              <div className="flex space-x-4">
+                <button
+                  onClick={handleAddToCart}
+                  disabled={!product.inStock}
+                  className={`flex-1 flex items-center justify-center space-x-2 py-4 px-6 rounded-lg font-semibold transition-colors ${
+                    product.inStock
+                      ? 'bg-blue-600 text-white hover:bg-blue-700'
+                      : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                  }`}
+                >
+                  <ShoppingCart className="h-5 w-5" />
+                  <span>Add to Cart</span>
+                </button>
+                <button
+                  disabled={!product.inStock}
+                  className={`px-8 py-4 rounded-lg font-semibold transition-colors ${
+                    product.inStock
+                      ? 'bg-gray-900 text-white hover:bg-gray-800'
+                      : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                  }`}
+                >
+                  Buy Now
+                </button>
+              </div>
+            </div>
+
+            {/* Key Benefits */}
+            <div className="bg-blue-50 p-6 rounded-xl">
+              <h3 className="font-semibold text-gray-900 mb-3">Key Benefits</h3>
+              <ul className="space-y-2">
+                {product.benefits.map((benefit, index) => (
+                  <li key={index} className="flex items-center space-x-2">
+                    <CheckCircle className="h-4 w-4 text-blue-600 flex-shrink-0" />
+                    <span className="text-gray-700">{benefit}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Product Details Tabs */}
+        <div className="mt-16">
+          <div className="border-b border-gray-200">
+            <nav className="flex space-x-8">
+              {tabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`py-4 px-1 border-b-2 font-medium text-sm transition-colors ${
+                    activeTab === tab.id
+                      ? 'border-blue-500 text-blue-600'
+                      : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </nav>
+          </div>
+
+          <div className="py-8">
+            {activeTab === 'description' && (
+              <div className="prose max-w-none">
+                <p className="text-gray-700 text-lg leading-relaxed">{product.description}</p>
+              </div>
+            )}
+
+            {activeTab === 'ingredients' && (
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Active Ingredients</h3>
+                <ul className="space-y-2">
+                  {product.ingredients.map((ingredient, index) => (
+                    <li key={index} className="flex items-center space-x-2">
+                      <CheckCircle className="h-4 w-4 text-green-600 flex-shrink-0" />
+                      <span className="text-gray-700">{ingredient}</span>
+                    </li>
+                  ))}
+                </ul>
+                
+                {product.allergens.length > 0 && (
+                  <div className="mt-8">
+                    <h4 className="font-semibold text-gray-900 mb-2">Allergen Information</h4>
+                    <div className="bg-yellow-50 p-4 rounded-lg">
+                      {product.allergens.map((allergen, index) => (
+                        <p key={index} className="text-yellow-800">{allergen}</p>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {activeTab === 'usage' && (
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Usage Instructions</h3>
+                <div className="bg-blue-50 p-6 rounded-lg">
+                  <p className="text-gray-700 text-lg">{product.usage}</p>
+                </div>
+                <div className="mt-6 bg-yellow-50 p-4 rounded-lg">
+                  <p className="text-yellow-800 font-medium">
+                    ⚠️ Consult your healthcare provider before starting any new supplement regimen.
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {activeTab === 'reviews' && (
+              <div>
+                <div className="flex items-center justify-between mb-6">
+                  <h3 className="text-xl font-semibold text-gray-900">Customer Reviews</h3>
+                  <div className="flex items-center space-x-2">
+                    <div className="flex items-center space-x-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className={`h-5 w-5 ${
+                            i < Math.floor(product.rating)
+                              ? 'fill-yellow-400 text-yellow-400'
+                              : 'text-gray-300'
+                          }`}
+                        />
+                      ))}
+                    </div>
+                    <span className="text-gray-600">{product.rating} out of 5</span>
+                  </div>
+                </div>
+                <p className="text-gray-600">Reviews coming soon...</p>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ProductDetail;
