@@ -48,36 +48,6 @@ const Home: React.FC = () => {
     }
   ];
 
-  const newsItems = [
-    {
-      title: appState.language === 'EN' 
-        ? "HarborWell Partners with Leading Research Institute"
-        : "HarborWell与领先研究机构合作",
-      date: "January 15, 2025",
-      excerpt: appState.language === 'EN'
-        ? "New collaboration aims to advance probiotic research and develop next-generation health solutions."
-        : "新的合作旨在推进益生菌研究并开发下一代健康解决方案。"
-    },
-    {
-      title: appState.language === 'EN'
-        ? "Clinical Study Confirms AKK Probiotic Efficacy"
-        : "临床研究证实AKK益生菌功效",
-      date: "December 28, 2024",
-      excerpt: appState.language === 'EN'
-        ? "12-week study shows significant improvements in metabolic health markers among participants."
-        : "为期12周的研究显示参与者的代谢健康指标有显著改善。"
-    },
-    {
-      title: appState.language === 'EN'
-        ? "FDA Registration Milestone Achieved"
-        : "获得FDA注册里程碑",
-      date: "December 10, 2024",
-      excerpt: appState.language === 'EN'
-        ? "HarborWell facility receives FDA registration, reinforcing our commitment to quality and safety."
-        : "HarborWell设施获得FDA注册，强化了我们对质量和安全的承诺。"
-    }
-  ];
-
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -260,33 +230,6 @@ const Home: React.FC = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* News Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              {getTranslation('latestNews', appState.language)}
-            </h2>
-            <p className="text-xl text-gray-600">
-              {getTranslation('latestNewsDesc', appState.language)}
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {newsItems.map((item, index) => (
-              <article key={index} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-                <div className="text-sm text-blue-600 font-medium mb-2">{item.date}</div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{item.title}</h3>
-                <p className="text-gray-600 mb-4">{item.excerpt}</p>
-                <a href="#" className="text-blue-600 font-medium hover:text-blue-700 transition-colors">
-                  {getTranslation('readMore', appState.language)} →
-                </a>
-              </article>
-            ))}
           </div>
         </div>
       </section>
