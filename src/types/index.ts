@@ -16,6 +16,12 @@ export interface Product {
   sales: number;
   rating: number;
   reviews: number;
+  specifications?: {
+    capsules?: number;
+    shelfLife?: string;
+    storage?: string;
+  };
+  targetAudience?: string[];
 }
 
 export interface CartItem {
