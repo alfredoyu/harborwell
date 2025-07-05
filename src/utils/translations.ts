@@ -10,7 +10,7 @@ export const translations = {
     // Home page
     heroTitle: 'Science-Backed',
     heroSubtitle: 'Wellness Solutions',
-    heroDescription: 'Discover the future of health with our clinically-proven supplements. Engineered for optimal bioavailability and maximum results.',
+    heroDescription: 'From reversing cellular aging to resetting your metabolism, our dual formulas are designed to unlock your full vitality.',
     emailPlaceholder: 'Enter your email for exclusive offers',
     subscribe: 'Subscribe',
     shopNow: 'Shop Now',
@@ -75,7 +75,7 @@ export const translations = {
     // Home page
     heroTitle: '科学验证的',
     heroSubtitle: '健康解决方案',
-    heroDescription: '探索经过临床验证的补充剂的健康未来。专为最佳生物利用度和最大效果而设计。',
+    heroDescription: '从逆转细胞衰老到重置新陈代谢，我们的双重配方旨在释放您的全部活力。',
     emailPlaceholder: '输入您的邮箱获取独家优惠',
     subscribe: '订阅',
     shopNow: '立即购买',
