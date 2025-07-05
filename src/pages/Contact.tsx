@@ -103,9 +103,9 @@ const Contact: React.FC = () => {
                     {appState.language === 'EN' ? 'Address' : '地址'}
                   </h3>
                   <p className="text-gray-600">
-                    HarborWell LLC<br />
-                    123 Innovation Drive<br />
-                    San Francisco, CA 94105<br />
+                    Foraise INC<br />
+                    302 S David St Ste 210<br />
+                    Casper, WY 82601<br />
                     {appState.language === 'EN' ? 'United States' : '美国'}
                   </p>
                 </div>
@@ -121,12 +121,12 @@ const Contact: React.FC = () => {
                   </h3>
                   <p className="text-gray-600">
                     {appState.language === 'EN' 
-                      ? 'Monday - Friday: 9:00 AM - 6:00 PM PST'
-                      : '周一至周五：上午9:00 - 下午6:00 PST'
+                      ? 'Monday - Friday: 9:00 AM - 6:00 PM MST'
+                      : '周一至周五：上午9:00 - 下午6:00 MST'
                     }<br />
                     {appState.language === 'EN' 
-                      ? 'Saturday: 10:00 AM - 4:00 PM PST'
-                      : '周六：上午10:00 - 下午4:00 PST'
+                      ? 'Saturday: 10:00 AM - 4:00 PM MST'
+                      : '周六：上午10:00 - 下午4:00 MST'
                     }<br />
                     {appState.language === 'EN' ? 'Sunday: Closed' : '周日：休息'}
                   </p>

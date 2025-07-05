@@ -61,7 +61,7 @@ const About: React.FC = () => {
               <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
               <div className="space-y-6 text-lg text-gray-700">
                 <p>
-                  Founded in 2020, HarborWell emerged from a simple yet powerful vision: to bridge the gap 
+                  Founded in 2024, HarborWell emerged from a simple yet powerful vision: to bridge the gap 
                   between cutting-edge nutritional science and accessible health solutions. Our journey began 
                   when our founding team of biochemists and nutrition experts recognized the need for 
                   supplements that truly deliver on their promises.
@@ -74,15 +74,15 @@ const About: React.FC = () => {
                 </p>
                 <p>
                   Today, HarborWell stands as a trusted name in the health and wellness industry, serving 
-                  over 50,000 customers worldwide with products that make a real difference in their lives.
+                  customers worldwide with products that make a real difference in their lives.
                 </p>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-6">
               <div className="bg-gradient-to-br from-blue-500 to-purple-600 p-8 rounded-xl text-white text-center">
                 <Globe className="h-12 w-12 mx-auto mb-4" />
-                <h3 className="text-3xl font-bold mb-2">50K+</h3>
-                <p>Global Customers</p>
+                <h3 className="text-3xl font-bold mb-2">Growing</h3>
+                <p>Global Reach</p>
               </div>
               <div className="bg-gradient-to-br from-green-500 to-teal-600 p-8 rounded-xl text-white text-center">
                 <Award className="h-12 w-12 mx-auto mb-4" />
@@ -147,7 +147,7 @@ const About: React.FC = () => {
               <div className="space-y-6 text-lg text-gray-700">
                 <p>
                   Our 50,000 square foot research and manufacturing facility represents the pinnacle 
-                  of supplement production technology. Located in San Francisco, our FDA-registered 
+                  of supplement production technology. Located in Casper, Wyoming, our FDA-registered 
                   facility operates under strict GMP guidelines to ensure every product meets our 
                   exacting standards.
                 </p>
@@ -224,31 +224,6 @@ const About: React.FC = () => {
                   <span className="text-gray-700">{patent}</span>
                 </div>
               ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Partnership */}
-      <section className="py-20 bg-blue-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-6">Research Partnerships</h2>
-          <p className="text-xl mb-8 max-w-3xl mx-auto">
-            We collaborate with leading academic institutions and research organizations to advance 
-            the science of nutrition and develop breakthrough health solutions.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white bg-opacity-10 p-6 rounded-xl">
-              <h3 className="text-lg font-semibold mb-2">Stanford University</h3>
-              <p className="text-blue-100">Microbiome Research Initiative</p>
-            </div>
-            <div className="bg-white bg-opacity-10 p-6 rounded-xl">
-              <h3 className="text-lg font-semibold mb-2">Harvard Medical School</h3>
-              <p className="text-blue-100">Longevity Studies Program</p>
-            </div>
-            <div className="bg-white bg-opacity-10 p-6 rounded-xl">
-              <h3 className="text-lg font-semibold mb-2">Mayo Clinic</h3>
-              <p className="text-blue-100">Clinical Validation Studies</p>
             </div>
           </div>
         </div>

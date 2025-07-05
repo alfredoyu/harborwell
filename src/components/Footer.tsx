@@ -49,7 +49,10 @@ const Footer: React.FC = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-5 w-5 text-blue-400" />
-                <span className="text-gray-300">San Francisco, CA 94105</span>
+                <span className="text-gray-300">
+                  302 S David St Ste 210<br />
+                  Casper, WY 82601
+                </span>
               </div>
             </div>
           </div>
@@ -77,7 +80,8 @@ const Footer: React.FC = () => {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Company</h3>
             <div className="space-y-2 text-sm text-gray-300">
-              <p><strong>Brand Owner:</strong> HarborWell LLC</p>
+              <p><strong>Brand Owner:</strong> HarborWell</p>
+              <p><strong>Company:</strong> Foraise INC</p>
               <p><strong>Product Origin:</strong> USA</p>
               <p><strong>Website Operator:</strong> HarborWell Digital</p>
               <p><strong>Payment Processor:</strong> Stripe Inc.</p>
