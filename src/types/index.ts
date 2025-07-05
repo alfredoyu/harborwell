@@ -31,37 +31,3 @@ export interface Review {
   date: string;
   verified: boolean;
 }
-
-export interface ShippingAddress {
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone: string;
-  address: string;
-  city: string;
-  state: string;
-  zipCode: string;
-  country: string;
-}
-
-export interface Order {
-  id: string;
-  items: CartItem[];
-  shippingAddress: ShippingAddress;
-  subtotal: number;
-  tax: number;
-  shipping: number;
-  total: number;
-  status: 'pending' | 'processing' | 'shipped' | 'delivered' | 'cancelled';
-  paymentStatus: 'pending' | 'paid' | 'failed' | 'refunded';
-  createdAt: string;
-  trackingNumber?: string;
-}
-
-export interface PaymentIntent {
-  id: string;
-  amount: number;
-  currency: string;
-  status: string;
-  clientSecret: string;
-}

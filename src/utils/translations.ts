@@ -43,12 +43,10 @@ export const translations = {
     policies: 'Policies',
     company: 'Company',
     
-    // Cart & Checkout
+    // Cart
     cart: 'Cart',
     cartEmpty: 'Your cart is empty',
     cartEmptyDesc: 'Discover our science-backed supplements to start your wellness journey.',
-    checkout: 'Checkout',
-    proceedToCheckout: 'Proceed to Checkout',
     
     // Contact
     contactTitle: 'Contact Us',
@@ -62,9 +60,9 @@ export const translations = {
     price: 'Price',
     quantity: 'Quantity',
     total: 'Total',
+    checkout: 'Checkout',
     continue: 'Continue',
-    back: 'Back',
-    orders: 'Orders'
+    back: 'Back'
   },
   ZH: {
     // Header
@@ -110,12 +108,10 @@ export const translations = {
     policies: '政策',
     company: '公司',
     
-    // Cart & Checkout
+    // Cart
     cart: '购物车',
     cartEmpty: '您的购物车是空的',
     cartEmptyDesc: '发现我们的科学验证补充剂，开始您的健康之旅。',
-    checkout: '结账',
-    proceedToCheckout: '前往结账',
     
     // Contact
     contactTitle: '联系我们',
@@ -129,9 +125,9 @@ export const translations = {
     price: '价格',
     quantity: '数量',
     total: '总计',
+    checkout: '结账',
     continue: '继续',
-    back: '返回',
-    orders: '订单'
+    back: '返回'
   }
 };
 

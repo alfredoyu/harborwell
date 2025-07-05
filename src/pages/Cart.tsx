@@ -161,12 +161,9 @@ const Cart: React.FC = () => {
                 </div>
               </div>
 
-              <Link
-                to="/checkout"
-                className="w-full bg-blue-600 text-white py-4 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors mb-4 block text-center"
-              >
+              <button className="w-full bg-blue-600 text-white py-4 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors mb-4">
                 Proceed to Checkout
-              </Link>
+              </button>
 
               <div className="text-center text-sm text-gray-600">
                 <p>Free shipping on orders over $50</p>
