@@ -54,35 +54,48 @@ export const products: Product[] = [
     ]
   },
   {
-    id: 'liver-detox-beauty',
-    name: 'Liver Detox & Beauty Complex',
+    id: 'nad-plus-cellular-prime',
+    name: 'NAD PLUS Cellular Prime',
     brand: 'HarborWell',
-    price: 39.99,
-    originalPrice: 54.99,
+    price: 89.99,
+    originalPrice: 119.99,
     image: '/src/assets/images/2.png',
     images: ['/src/assets/images/2.png'],
     category: 'Beauty & Anti-Aging',
-    description: 'Comprehensive liver support and beauty formula combining milk thistle, detoxifying herbs, and anti-aging compounds for radiant skin and optimal liver function.',
+    description: 'Introducing NAD PLUS Cellular Prime, a pinnacle of anti-aging science designed for those who seek to preserve their youthfulness from the inside out. This luxurious, high-potency compound formula provides internal conditioning and external nourishment through a multi-benefit, all-in-one solution. By activating cellular vitality and providing powerful antioxidant defense, Cellular Prime helps you achieve profound anti-aging and youth-preserving results.',
     benefits: [
-      'Supports liver detoxification',
-      'Promotes radiant skin',
-      'Anti-aging properties',
-      'Enhances natural beauty',
-      'Supports overall wellness'
+      'Cellular Activation: Works at the cellular level to rejuvenate and energize your body from its very foundation',
+      'Internal Anti-Aging: Promotes the body\'s own endogenous anti-aging and conditioning processes for sustainable, long-term results',
+      'Comprehensive Antioxidant Defense: Delivers a multi-effect shield against oxidative stress, a key factor in aging',
+      'All-in-One Formula: A sophisticated, multi-benefit formula that combines internal regulation with external nourishment in a single daily capsule',
+      'Mitochondrial Support: Enhances cellular energy production and protects cellular powerhouses',
+      'DNA Repair Support: Promotes cellular longevity and healthy aging pathways'
     ],
     ingredients: [
-      'Milk Thistle Extract (80% Silymarin) - 300mg',
-      'Dandelion Root Extract - 200mg',
-      'Turmeric Extract (95% Curcumin) - 150mg',
-      'Artichoke Leaf Extract - 100mg',
-      'Vitamin E - 15mg',
-      'Selenium - 55mcg'
+      'NR (Nicotinamide Riboside) 300mg - Highly effective precursor to NAD+, essential for cellular energy production, DNA repair, and overall cellular longevity',
+      'PQQ (Pyrroloquinoline Quinone) 10mg - Potent nutrient that supports mitochondrial health and promotes generation of new mitochondria',
+      'Co-crystal Reduced Coenzyme Q10 50mg - Most bioavailable, active form of CoQ10 for cellular energy and oxidative damage protection',
+      'Ergothioneine 10mg - Unique intelligent antioxidant that specifically targets and neutralizes harmful free radicals',
+      'Spermidine 15mg - Key compound that induces autophagy, the body\'s natural cellular cleanup process for renewal',
+      'Astaxanthin 6mg - One of nature\'s most powerful antioxidants for oxidative stress combat and skin elasticity support',
+      'Pterostilbene 10mg - Powerful antioxidant that works synergistically to support healthy aging pathways and cellular protection'
     ],
-    usage: 'Take 2 tablets daily with water, preferably with meals.',
-    allergens: ['Gluten-free', 'Non-GMO'],
+    usage: 'Take one capsule, once daily. Store in a cool, dry place away from direct sunlight.',
+    allergens: ['Consult healthcare provider before use', 'Not suitable for pregnant or nursing women'],
     inStock: true,
-    sales: 1923,
-    rating: 4.7,
-    reviews: 287
+    sales: 1847,
+    rating: 4.8,
+    reviews: 234,
+    specifications: {
+      capsules: 30,
+      shelfLife: '2 years',
+      storage: 'Cool, dry place away from direct sunlight'
+    },
+    targetAudience: [
+      'Individuals concerned with signs of aging who want to maintain a youthful appearance',
+      'Those experiencing a decline in energy levels and cellular vitality',
+      'People seeking to proactively support their long-term health and longevity at a cellular level',
+      'Anyone desiring a high-end, comprehensive, all-in-one anti-aging supplement'
+    ]
   }
 ];
