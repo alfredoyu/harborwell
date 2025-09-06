@@ -31,7 +31,8 @@ const Header: React.FC = () => {
     { name: getTranslation('home', appState.language), href: '/' },
     { name: getTranslation('allProducts', appState.language), href: '/products' },
     { name: getTranslation('aboutUs', appState.language), href: '/about' },
-    { name: getTranslation('contactUs', appState.language), href: '/contact' }
+    { name: getTranslation('contactUs', appState.language), href: '/contact' },
+    { name: 'Admin', href: '/admin' }
   ];
 
   const isActive = (path: string) => location.pathname === path;
