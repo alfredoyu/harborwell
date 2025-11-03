@@ -68,11 +68,11 @@ const Home: React.FC = () => {
               <span className="text-white drop-shadow-lg">
                 {getTranslation('heroTitle', appState.language)}
               </span>
-              <span className="bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent block drop-shadow-lg">
+              <span className="text-primary-300 block drop-shadow-lg">
                 {getTranslation('heroSubtitle', appState.language)}
               </span>
             </h1>
-            <p className="text-xl text-white mb-8 max-w-3xl mx-auto drop-shadow-lg">
+            <p className="text-xl text-white mb-8 max-w-3xl mx-auto drop-shadow-lg font-serif font-light">
               {getTranslation('heroDescription', appState.language)}
             </p>
             
@@ -89,7 +89,7 @@ const Home: React.FC = () => {
                 />
                 <button 
                   type="submit"
-                  className="bg-green-600 text-white px-8 py-4 rounded-r-lg hover:bg-green-700 transition-colors font-semibold shadow-lg"
+                  className="bg-primary-600 text-white px-8 py-4 rounded-r-lg hover:bg-primary-700 transition-colors font-semibold shadow-lg"
                 >
                   {getTranslation('subscribe', appState.language)}
                 </button>
@@ -103,7 +103,7 @@ const Home: React.FC = () => {
 
             <Link
               to="/products"
-              className="inline-flex items-center space-x-2 bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-700 transition-colors shadow-xl hover:shadow-2xl transform hover:scale-105"
+              className="inline-flex items-center space-x-2 bg-primary-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary-700 transition-colors shadow-xl hover:shadow-2xl transform hover:scale-105"
             >
               <span>{getTranslation('shopNow', appState.language)}</span>
               <ArrowRight className="h-5 w-5" />
@@ -119,7 +119,7 @@ const Home: React.FC = () => {
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               {getTranslation('featuredProducts', appState.language)}
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-600 font-serif font-light">
               {getTranslation('featuredProductsDesc', appState.language)}
             </p>
           </div>
@@ -139,7 +139,7 @@ const Home: React.FC = () => {
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               {getTranslation('customerReviews', appState.language)}
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-600 font-serif font-light">
               {getTranslation('customerReviewsDesc', appState.language)}
             </p>
           </div>
@@ -155,14 +155,14 @@ const Home: React.FC = () => {
                   </div>
                   {testimonial.verified && (
                     <div className="ml-2 flex items-center space-x-1">
-                      <CheckCircle className="h-4 w-4 text-green-500" />
-                      <span className="text-sm text-green-600">
+                      <CheckCircle className="h-4 w-4 text-primary-500" />
+                      <span className="text-sm text-primary-600">
                         {getTranslation('verified', appState.language)}
                       </span>
                     </div>
                   )}
                 </div>
-                <p className="text-gray-700 mb-4">"{testimonial.comment}"</p>
+                <p className="text-gray-700 mb-4 font-serif font-light">"{testimonial.comment}"</p>
                 <p className="font-semibold text-gray-900">{testimonial.name}</p>
               </div>
             ))}
@@ -184,24 +184,24 @@ const Home: React.FC = () => {
               
               <div className="grid grid-cols-2 gap-6 mb-8">
                 <div className="text-center">
-                  <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Microscope className="h-8 w-8 text-blue-600" />
+                  <div className="bg-primary-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Microscope className="h-8 w-8 text-primary-600" />
                   </div>
                   <h3 className="font-semibold text-gray-900 mb-2">
                     {appState.language === 'EN' ? 'Research Team' : '研究团队'}
                   </h3>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-gray-600 font-serif font-light">
                     {appState.language === 'EN' ? 'PhD scientists and nutritionists' : '博士科学家和营养师'}
                   </p>
                 </div>
                 <div className="text-center">
-                  <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Shield className="h-8 w-8 text-green-600" />
+                  <div className="bg-secondary-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Shield className="h-8 w-8 text-secondary-600" />
                   </div>
                   <h3 className="font-semibold text-gray-900 mb-2">
                     {appState.language === 'EN' ? 'FDA Registered' : 'FDA注册'}
                   </h3>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-gray-600 font-serif font-light">
                     {appState.language === 'EN' ? 'GMP certified facility' : 'GMP认证设施'}
                   </p>
                 </div>
@@ -209,7 +209,7 @@ const Home: React.FC = () => {
               
               <Link
                 to="/about"
-                className="inline-flex items-center space-x-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors"
+                className="inline-flex items-center space-x-2 text-primary-600 font-semibold hover:text-primary-700 transition-colors"
               >
                 <span>{getTranslation('learnMore', appState.language)}</span>
                 <ArrowRight className="h-5 w-5" />
@@ -218,27 +218,27 @@ const Home: React.FC = () => {
             
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
-                <div className="bg-gradient-to-br from-blue-500 to-purple-600 p-8 rounded-xl text-white">
+                <div className="bg-primary-500 p-8 rounded-xl text-white">
                   <Award className="h-12 w-12 mb-4" />
                   <h3 className="text-2xl font-bold mb-2">15+</h3>
-                  <p>{appState.language === 'EN' ? 'Patents & Certifications' : '专利和认证'}</p>
+                  <p className="font-serif font-light">{appState.language === 'EN' ? 'Patents & Certifications' : '专利和认证'}</p>
                 </div>
-                <div className="bg-gradient-to-br from-green-500 to-teal-600 p-8 rounded-xl text-white">
+                <div className="bg-secondary-500 p-8 rounded-xl text-white">
                   <Users className="h-12 w-12 mb-4" />
                   <h3 className="text-2xl font-bold mb-2">50K+</h3>
-                  <p>{appState.language === 'EN' ? 'Happy Customers' : '满意客户'}</p>
+                  <p className="font-serif font-light">{appState.language === 'EN' ? 'Happy Customers' : '满意客户'}</p>
                 </div>
               </div>
               <div className="space-y-4 pt-8">
-                <div className="bg-gradient-to-br from-purple-500 to-pink-600 p-8 rounded-xl text-white">
+                <div className="bg-primary-600 p-8 rounded-xl text-white">
                   <Microscope className="h-12 w-12 mb-4" />
                   <h3 className="text-2xl font-bold mb-2">25+</h3>
-                  <p>{appState.language === 'EN' ? 'Clinical Studies' : '临床研究'}</p>
+                  <p className="font-serif font-light">{appState.language === 'EN' ? 'Clinical Studies' : '临床研究'}</p>
                 </div>
-                <div className="bg-gradient-to-br from-orange-500 to-red-600 p-8 rounded-xl text-white">
+                <div className="bg-secondary-600 p-8 rounded-xl text-white">
                   <Shield className="h-12 w-12 mb-4" />
                   <h3 className="text-2xl font-bold mb-2">100%</h3>
-                  <p>{appState.language === 'EN' ? 'Third-Party Tested' : '第三方检测'}</p>
+                  <p className="font-serif font-light">{appState.language === 'EN' ? 'Third-Party Tested' : '第三方检测'}</p>
                 </div>
               </div>
             </div>

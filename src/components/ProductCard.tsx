@@ -54,7 +54,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
       <div className="p-6">
         <div className="flex items-center justify-between mb-2">
-          <span className="text-sm text-blue-600 font-medium">{product.brand}</span>
+          <span className="text-sm text-primary-600 font-medium">{product.brand}</span>
           <div className="flex items-center space-x-1">
             <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
             <span className="text-sm text-gray-600">{product.rating}</span>
@@ -62,12 +62,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         </div>
 
         <Link to={`/product/${product.id}`}>
-          <h3 className="text-lg font-semibold text-gray-900 mb-2 hover:text-blue-600 transition-colors">
+          <h3 className="text-lg font-semibold text-gray-900 mb-2 hover:text-primary-600 transition-colors">
             {product.name}
           </h3>
         </Link>
 
-        <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+        <p className="text-gray-600 text-sm mb-4 line-clamp-2 font-serif font-light">
           {product.description}
         </p>
 
@@ -90,7 +90,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           disabled={!product.inStock}
           className={`w-full flex items-center justify-center space-x-2 py-3 px-4 rounded-lg font-semibold transition-colors ${
             product.inStock
-              ? 'bg-blue-600 text-white hover:bg-blue-700'
+              ? 'bg-primary-600 text-white hover:bg-primary-700'
               : 'bg-gray-300 text-gray-500 cursor-not-allowed'
           }`}
         >

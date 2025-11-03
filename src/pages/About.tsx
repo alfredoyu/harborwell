@@ -42,11 +42,11 @@ const About: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-purple-50 py-20">
+      <section className="bg-primary-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-5xl font-bold text-gray-900 mb-6">About HARBORWELL</h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto font-serif font-light">
               Designed for women, inspired by science — HARBORWELL empowers vitality and timeless beauty.
             </p>
           </div>
@@ -59,7 +59,7 @@ const About: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
-              <div className="space-y-6 text-lg text-gray-700">
+              <div className="space-y-6 text-lg text-gray-700 font-serif font-light">
                 <p>
                   Founded in 2024, HARBORWELL was born from a simple yet powerful vision — to empower women through the harmony of science and wellness. Our story began when a team of biochemists and nutrition experts set out to create supplements that truly support women's vitality, balance, and beauty from within.
                 </p>
@@ -72,25 +72,25 @@ const About: React.FC = () => {
               </div>
             </div>
             <div className="grid grid-cols-2 gap-6">
-              <div className="bg-gradient-to-br from-blue-500 to-purple-600 p-8 rounded-xl text-white text-center">
+              <div className="bg-primary-500 p-8 rounded-xl text-white text-center">
                 <Globe className="h-12 w-12 mx-auto mb-4" />
                 <h3 className="text-3xl font-bold mb-2">Growing</h3>
-                <p>Global Reach</p>
+                <p className="font-serif font-light">Global Reach</p>
               </div>
-              <div className="bg-gradient-to-br from-green-500 to-teal-600 p-8 rounded-xl text-white text-center">
+              <div className="bg-secondary-500 p-8 rounded-xl text-white text-center">
                 <Award className="h-12 w-12 mx-auto mb-4" />
                 <h3 className="text-3xl font-bold mb-2">15+</h3>
-                <p>Industry Awards</p>
+                <p className="font-serif font-light">Industry Awards</p>
               </div>
-              <div className="bg-gradient-to-br from-purple-500 to-pink-600 p-8 rounded-xl text-white text-center">
+              <div className="bg-primary-600 p-8 rounded-xl text-white text-center">
                 <Microscope className="h-12 w-12 mx-auto mb-4" />
                 <h3 className="text-3xl font-bold mb-2">25+</h3>
-                <p>Clinical Studies</p>
+                <p className="font-serif font-light">Clinical Studies</p>
               </div>
-              <div className="bg-gradient-to-br from-orange-500 to-red-600 p-8 rounded-xl text-white text-center">
+              <div className="bg-secondary-600 p-8 rounded-xl text-white text-center">
                 <Shield className="h-12 w-12 mx-auto mb-4" />
                 <h3 className="text-3xl font-bold mb-2">100%</h3>
-                <p>Quality Tested</p>
+                <p className="font-serif font-light">Quality Tested</p>
               </div>
             </div>
           </div>
@@ -110,7 +110,7 @@ const About: React.FC = () => {
             </div>
             <div className="order-1 lg:order-2">
               <h2 className="text-4xl font-bold text-gray-900 mb-6">State-of-the-Art Laboratory</h2>
-              <div className="space-y-6 text-lg text-gray-700">
+              <div className="space-y-6 text-lg text-gray-700 font-serif font-light">
                 <p>
                   Our 50,000 square foot research and manufacturing facility represents the pinnacle 
                   of supplement production technology. Located in Casper, Wyoming, our FDA-registered 
@@ -127,20 +127,20 @@ const About: React.FC = () => {
               
               <div className="mt-8 grid grid-cols-2 gap-4">
                 <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-6 w-6 text-green-600" />
-                  <span className="text-gray-700">HPLC Analysis</span>
+                  <CheckCircle className="h-6 w-6 text-primary-600" />
+                  <span className="text-gray-700 font-serif font-light">HPLC Analysis</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-6 w-6 text-green-600" />
-                  <span className="text-gray-700">Microbial Testing</span>
+                  <CheckCircle className="h-6 w-6 text-primary-600" />
+                  <span className="text-gray-700 font-serif font-light">Microbial Testing</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-6 w-6 text-green-600" />
-                  <span className="text-gray-700">Heavy Metal Screening</span>
+                  <CheckCircle className="h-6 w-6 text-primary-600" />
+                  <span className="text-gray-700 font-serif font-light">Heavy Metal Screening</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-6 w-6 text-green-600" />
-                  <span className="text-gray-700">Potency Verification</span>
+                  <CheckCircle className="h-6 w-6 text-primary-600" />
+                  <span className="text-gray-700 font-serif font-light">Potency Verification</span>
                 </div>
               </div>
             </div>

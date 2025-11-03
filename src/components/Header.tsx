@@ -45,7 +45,7 @@ const Header: React.FC = () => {
             <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-lg">H</span>
             </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="text-2xl font-bold text-primary-600">
               HarborWell
             </span>
           </Link>
@@ -58,8 +58,8 @@ const Header: React.FC = () => {
                 to={item.href}
                 className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${
                   isActive(item.href)
-                    ? 'text-blue-600 border-b-2 border-blue-600'
-                    : 'text-gray-700 hover:text-blue-600'
+                    ? 'text-primary-600 border-b-2 border-primary-600'
+                    : 'text-gray-700 hover:text-primary-600'
                 }`}
               >
                 {item.name}
@@ -79,7 +79,7 @@ const Header: React.FC = () => {
                 className="w-64 pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
               <button type="submit" className="absolute left-3 top-2.5">
-                <Search className="h-5 w-5 text-gray-400 hover:text-blue-600 transition-colors" />
+                <Search className="h-5 w-5 text-gray-400 hover:text-primary-600 transition-colors" />
               </button>
             </form>
 
@@ -88,7 +88,7 @@ const Header: React.FC = () => {
               <select
                 value={appState.language}
                 onChange={(e) => handleLanguageChange(e.target.value as 'EN' | 'ZH')}
-                className="appearance-none bg-transparent border border-gray-300 rounded px-3 py-1 pr-8 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="appearance-none bg-transparent border border-gray-300 rounded px-3 py-1 pr-8 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500"
               >
                 <option value="EN">EN</option>
                 <option value="ZH">中文</option>
@@ -101,7 +101,7 @@ const Header: React.FC = () => {
               <select
                 value={appState.currency}
                 onChange={(e) => handleCurrencyChange(e.target.value as 'USD' | 'EUR' | 'GBP' | 'CNY')}
-                className="appearance-none bg-transparent border border-gray-300 rounded px-3 py-1 pr-8 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="appearance-none bg-transparent border border-gray-300 rounded px-3 py-1 pr-8 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500"
               >
                 <option value="USD">USD</option>
                 <option value="EUR">EUR</option>
@@ -112,7 +112,7 @@ const Header: React.FC = () => {
             </div>
 
             {/* Cart */}
-            <Link to="/cart" className="relative p-2 text-gray-700 hover:text-blue-600 transition-colors">
+            <Link to="/cart" className="relative p-2 text-gray-700 hover:text-primary-600 transition-colors">
               <ShoppingCart className="h-6 w-6" />
               {cartState.items.length > 0 && (
                 <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
@@ -124,7 +124,7 @@ const Header: React.FC = () => {
             {/* Mobile menu button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 text-gray-700 hover:text-blue-600"
+              className="md:hidden p-2 text-gray-700 hover:text-primary-600"
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -142,8 +142,8 @@ const Header: React.FC = () => {
                   onClick={() => setIsMenuOpen(false)}
                   className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${
                     isActive(item.href)
-                      ? 'text-blue-600 bg-blue-50'
-                      : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                      ? 'text-primary-600 bg-primary-50'
+                      : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
                   }`}
                 >
                   {item.name}
