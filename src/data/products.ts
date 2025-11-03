@@ -4,7 +4,7 @@ export const products: Product[] = [
   {
     id: 'slimbody-metabo-probiotic',
     name: 'Slimbody Metabo Probiotic',
-    brand: 'HarborWell',
+    brand: 'HARBORWELL',
     price: 49.99,
     originalPrice: 69.99,
     image: '/src/assets/images/1.png',
@@ -56,7 +56,7 @@ export const products: Product[] = [
   {
     id: 'cellular-age-bright-complex',
     name: 'Cellular AGE- Bright Complex',
-    brand: 'HarborWell',
+    brand: 'HARBORWELL',
     price: 89.99,
     originalPrice: 119.99,
     image: '/src/assets/images/2.png',
