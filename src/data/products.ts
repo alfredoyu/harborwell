@@ -63,11 +63,11 @@ export const products: Product[] = [
     brand: 'HarborWell',
     price: 89.99,
     originalPrice: 119.99,
-    image: '/images/2.png',
+    image: '/images/1 copy.jpg',
     images: [
-      '/images/2.png',
-      '/images/1.png',
-      '/images/2.jpg'
+      '/images/1 copy.jpg',
+      '/images/2 copy.jpg',
+      '/images/3.jpg'
     ],
     category: 'Beauty & Anti-Aging',
     description: 'Introducing Cellular AGE- Bright Complex, a pinnacle of anti-aging science designed for those who seek to preserve their youthfulness from the inside out. This luxurious, high-potency compound formula provides internal conditioning and external nourishment through a multi-benefit, all-in-one solution. By activating cellular vitality and providing powerful antioxidant defense, Cellular AGE- Bright Complex helps you achieve profound anti-aging and youth-preserving results.',
