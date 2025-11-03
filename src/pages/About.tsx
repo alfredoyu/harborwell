@@ -60,7 +60,7 @@ const About: React.FC = () => {
               <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
               <div className="space-y-6 text-lg text-gray-700 font-serif font-light">
                 <p>
-                  HARBORWELL was born from a simple yet powerful vision — to empower women through the harmony of science and wellness. Our story began when a team of biochemists and nutrition experts set out to create supplements that truly support women's vitality, balance, and beauty from within.
+                  Founded in 2024, HARBORWELL was born from a simple yet powerful vision — to empower women through the harmony of science and wellness. Our story began when a team of biochemists and nutrition experts set out to create supplements that truly support women's vitality, balance, and beauty from within.
                 </p>
                 <p>
                   Through close collaboration with leading research institutions and an unwavering commitment to scientific validation, we've developed formulas that combine innovation with care. Each product is crafted with clinically backed ingredients and manufactured to the highest quality standards.
