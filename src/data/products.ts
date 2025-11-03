@@ -7,12 +7,11 @@ export const products: Product[] = [
     brand: 'HarborWell',
     price: 49.99,
     originalPrice: 69.99,
-    image: '/src/assets/images/1.png',
-    image: '/src/assets/images/1.jpg',
+    image: '/src/assets/images/1.jpeg',
     images: [
-      '/src/assets/images/1.jpg',
-      '/src/assets/images/2.jpg', 
-      '/src/assets/images/3.jpg'
+      '/src/assets/images/1.jpeg',
+      '/src/assets/images/2.jpeg',
+      '/src/assets/images/3.jpeg'
     ],
     category: 'Weight Management',
     description: 'Slimbody Metabo Probiotic is a revolutionary dietary supplement designed to support weight loss and metabolic health. Formulated with a synergistic blend of natural ingredients that work together to manage the metabolism of sugar, fat, and cholesterol. Developed by a top U.S. research team with 15 years of experience and FDA certified.',
