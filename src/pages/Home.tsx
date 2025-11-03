@@ -51,39 +51,51 @@ const Home: React.FC = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-50 via-white to-purple-50 py-20">
+      <section className="relative py-20 min-h-screen flex items-center">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(/src/assets/images/9a39688615c0f49d4d7c540e28982718.jpg)'
+          }}
+        />
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-black bg-opacity-40" />
+        
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
+          <div className="text-center relative z-10">
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              {getTranslation('heroTitle', appState.language)}
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent block">
+              <span className="text-white drop-shadow-lg">
+                {getTranslation('heroTitle', appState.language)}
+              </span>
+              <span className="bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent block drop-shadow-lg">
                 {getTranslation('heroSubtitle', appState.language)}
               </span>
             </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-white mb-8 max-w-3xl mx-auto drop-shadow-lg">
               {getTranslation('heroDescription', appState.language)}
             </p>
             
             {/* Newsletter Signup */}
-            <div className="max-w-md mx-auto mb-12">
-              <form onSubmit={handleSubscribe} className="flex rounded-lg shadow-lg">
+            <div className="max-w-md mx-auto mb-12 backdrop-blur-sm bg-white bg-opacity-10 p-6 rounded-xl">
+              <form onSubmit={handleSubscribe} className="flex rounded-lg shadow-xl">
                 <input
                   type="email"
                   placeholder={getTranslation('emailPlaceholder', appState.language)}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="flex-1 px-6 py-4 rounded-l-lg border-0 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                  className="flex-1 px-6 py-4 rounded-l-lg border-0 focus:ring-2 focus:ring-green-500 focus:outline-none bg-white bg-opacity-90 backdrop-blur-sm"
                 />
                 <button 
                   type="submit"
-                  className="bg-blue-600 text-white px-8 py-4 rounded-r-lg hover:bg-blue-700 transition-colors font-semibold"
+                  className="bg-green-600 text-white px-8 py-4 rounded-r-lg hover:bg-green-700 transition-colors font-semibold shadow-lg"
                 >
                   {getTranslation('subscribe', appState.language)}
                 </button>
               </form>
               {subscribed && (
-                <p className="mt-2 text-green-600 text-sm">
+                <p className="mt-2 text-green-300 text-sm font-medium drop-shadow">
                   {appState.language === 'EN' ? 'Successfully subscribed!' : '订阅成功！'}
                 </p>
               )}
@@ -91,7 +103,7 @@ const Home: React.FC = () => {
 
             <Link
               to="/products"
-              className="inline-flex items-center space-x-2 bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors"
+              className="inline-flex items-center space-x-2 bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-700 transition-colors shadow-xl hover:shadow-2xl transform hover:scale-105"
             >
               <span>{getTranslation('shopNow', appState.language)}</span>
               <ArrowRight className="h-5 w-5" />
