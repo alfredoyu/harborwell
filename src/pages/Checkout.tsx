@@ -65,24 +65,6 @@ const Checkout: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setShowProcessingModal(true);
-    
-    // Simulate payment processing delay
-    setTimeout(async () => {
-      setIsProcessing(true);
-      setShowProcessingModal(false);
-      
-      // Additional processing time
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      setOrderComplete(true);
-      setIsProcessing(false);
-      
-      // Clear cart after successful order
-      setTimeout(() => {
-        dispatch({ type: 'CLEAR_CART' });
-        navigate('/');
-      }, 3000);
-    }, 2000);
   };
 
   const closeProcessingModal = () => {
@@ -105,28 +87,6 @@ const Checkout: React.FC = () => {
             >
               <span>Shop Products</span>
             </Link>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  if (orderComplete) {
-    return (
-      <div className="min-h-screen bg-gray-50 py-16">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white p-8 rounded-xl shadow-lg text-center">
-            <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-6" />
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Order Complete!</h2>
-            <p className="text-xl text-gray-600 mb-6">
-              Thank you for your purchase. Your order has been successfully processed.
-            </p>
-            <p className="text-gray-600 mb-8">
-              You will receive a confirmation email shortly with your order details and tracking information.
-            </p>
-            <div className="text-sm text-gray-500">
-              Redirecting to home page in a few seconds...
-            </div>
           </div>
         </div>
       </div>
@@ -372,12 +332,11 @@ const Checkout: React.FC = () => {
 
               <button
                 type="submit"
-                disabled={isProcessing}
-                className="w-full bg-blue-600 text-white py-4 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-blue-600 text-white py-4 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center space-x-2"
               >
                 <Lock className="h-5 w-5" />
                 <span>
-                  {isProcessing ? 'Processing Order...' : `Complete Order - ${formatPrice(total, appState.currency)}`}
+                  Complete Order - {formatPrice(total, appState.currency)}
                 </span>
               </button>
             </form>
