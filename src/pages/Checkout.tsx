@@ -140,7 +140,7 @@ const Checkout: React.FC = () => {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white p-8 rounded-xl shadow-2xl max-w-md w-full mx-4">
             <div className="flex justify-between items-center mb-6">
-              <h3 className="text-xl font-semibold text-gray-900">处理订单</h3>
+              <h3 className="text-xl font-semibold text-gray-900">Processing Order</h3>
               <button
                 onClick={closeProcessingModal}
                 className="text-gray-400 hover:text-gray-600 transition-colors"
@@ -150,8 +150,8 @@ const Checkout: React.FC = () => {
             </div>
             <div className="text-center">
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-              <p className="text-lg text-gray-700 mb-4">我们正在处理您的订单</p>
-              <p className="text-sm text-gray-500">请稍候，不要关闭此页面...</p>
+              <p className="text-lg text-gray-700 mb-4">We are processing your order</p>
+              <p className="text-sm text-gray-500">Please wait, do not close this page...</p>
             </div>
           </div>
         </div>
