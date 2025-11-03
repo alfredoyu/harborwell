@@ -45,9 +45,9 @@ const About: React.FC = () => {
       <section className="bg-gradient-to-br from-blue-50 to-purple-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-5xl font-bold text-gray-900 mb-6">About HarborWell</h1>
+            <h1 className="text-5xl font-bold text-gray-900 mb-6">About HARBORWELL</h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Pioneering the future of health through science-backed nutrition and innovative supplement technology.
+              Designed for women, inspired by science — HARBORWELL empowers vitality and timeless beauty.
             </p>
           </div>
         </div>
@@ -61,20 +61,13 @@ const About: React.FC = () => {
               <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
               <div className="space-y-6 text-lg text-gray-700">
                 <p>
-                  Founded in 2024, HarborWell emerged from a simple yet powerful vision: to bridge the gap 
-                  between cutting-edge nutritional science and accessible health solutions. Our journey began 
-                  when our founding team of biochemists and nutrition experts recognized the need for 
-                  supplements that truly deliver on their promises.
+                  Founded in 2024, HARBORWELL was born from a simple yet powerful vision — to empower women through the harmony of science and wellness. Our story began when a team of biochemists and nutrition experts set out to create supplements that truly support women's vitality, balance, and beauty from within.
                 </p>
                 <p>
-                  Through strategic partnerships with leading research institutions and our commitment to 
-                  rigorous scientific validation, we've developed a portfolio of products that represent 
-                  the pinnacle of nutritional innovation. Every formula is backed by clinical research 
-                  and manufactured to the highest quality standards.
+                  Through close collaboration with leading research institutions and an unwavering commitment to scientific validation, we've developed formulas that combine innovation with care. Each product is crafted with clinically backed ingredients and manufactured to the highest quality standards.
                 </p>
                 <p>
-                  Today, HarborWell stands as a trusted name in the health and wellness industry, serving 
-                  customers worldwide with products that make a real difference in their lives.
+                  Today, HARBORWELL stands as a trusted wellness brand for women worldwide — helping every woman feel energized, confident, and radiant in her own rhythm.
                 </p>
               </div>
             </div>
@@ -104,35 +97,8 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      {/* Research Team */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Research Team</h2>
-            <p className="text-xl text-gray-600">
-              World-class scientists dedicated to advancing nutritional health
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {teamMembers.map((member, index) => (
-              <div key={index} className="bg-white p-8 rounded-xl shadow-lg text-center">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-32 h-32 rounded-full mx-auto mb-6 object-cover"
-                />
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{member.name}</h3>
-                <p className="text-blue-600 font-medium mb-2">{member.role}</p>
-                <p className="text-gray-600 text-sm">{member.credentials}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Laboratory */}
-      <section className="py-20">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
@@ -177,53 +143,6 @@ const About: React.FC = () => {
                   <span className="text-gray-700">Potency Verification</span>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Certifications */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Certifications & Standards</h2>
-            <p className="text-xl text-gray-600">
-              Our commitment to quality is validated by industry-leading certifications
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {certifications.map((cert, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-lg text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Shield className="h-8 w-8 text-blue-600" />
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{cert.name}</h3>
-                <p className="text-gray-600 text-sm">{cert.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Patents */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Patents & Innovation</h2>
-            <p className="text-xl text-gray-600">
-              Proprietary technologies that set our products apart
-            </p>
-          </div>
-          
-          <div className="bg-white p-8 rounded-xl shadow-lg">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {patents.map((patent, index) => (
-                <div key={index} className="flex items-center space-x-3">
-                  <Award className="h-6 w-6 text-blue-600 flex-shrink-0" />
-                  <span className="text-gray-700">{patent}</span>
-                </div>
-              ))}
             </div>
           </div>
         </div>
