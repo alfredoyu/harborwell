@@ -111,14 +111,13 @@ const About: React.FC = () => {
               <h2 className="text-4xl font-bold text-gray-900 mb-6">State-of-the-Art Laboratory</h2>
               <div className="space-y-6 text-lg text-gray-700 font-serif font-light">
                 <p>
-                  Our 50,000 square foot research and manufacturing facility represents the pinnacle 
-                  of supplement production technology. Located in Casper, Wyoming, our FDA-registered 
-                  facility operates under strict quality guidelines to ensure every product meets our 
-                  exacting standards.
+                  Our research and manufacturing facilities represent the pinnacle of production 
+                  technology. We operate under strict quality guidelines to ensure every product 
+                  meets our exacting standards.
                 </p>
                 <p>
                   Equipped with advanced analytical instruments and staffed by experienced scientists, 
-                  our laboratory conducts comprehensive testing at every stage of production. From 
+                  our laboratory conducts comprehensive testing at every stage. From 
                   raw material verification to final product analysis, we maintain complete quality 
                   control throughout the manufacturing process.
                 </p>
