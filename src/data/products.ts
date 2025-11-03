@@ -2,15 +2,15 @@ import { Product } from '../types';
 
 export const products: Product[] = [
   {
-    id: 'akk-metabolic-catalyst-plus',
-    name: 'AKK Metabolic Catalyst PLUS',
+    id: 'slimbody-metabo-probiotic',
+    name: 'Slimbody Metabo Probiotic',
     brand: 'HarborWell',
     price: 49.99,
     originalPrice: 69.99,
     image: '/src/assets/images/1.png',
     images: ['/src/assets/images/1.png'],
     category: 'Weight Management',
-    description: 'AKK Metabolic Catalyst PLUS is a revolutionary dietary supplement designed to support weight loss and metabolic health. Formulated with a synergistic blend of natural ingredients that work together to manage the metabolism of sugar, fat, and cholesterol. Developed by a top U.S. research team with 15 years of experience and FDA certified.',
+    description: 'Slimbody Metabo Probiotic is a revolutionary dietary supplement designed to support weight loss and metabolic health. Formulated with a synergistic blend of natural ingredients that work together to manage the metabolism of sugar, fat, and cholesterol. Developed by a top U.S. research team with 15 years of experience and FDA certified.',
     benefits: [
       'Metabolic Management: Improves the body\'s overall metabolism',
       'Weight Control: Promotes an "easy-to-lose" body type for effective weight management',
@@ -54,15 +54,15 @@ export const products: Product[] = [
     ]
   },
   {
-    id: 'nad-plus-cellular-prime',
-    name: 'NAD PLUS Cellular Prime',
+    id: 'cellular-age-bright-complex',
+    name: 'Cellular AGE- Bright Complex',
     brand: 'HarborWell',
     price: 89.99,
     originalPrice: 119.99,
     image: '/src/assets/images/2.png',
     images: ['/src/assets/images/2.png'],
     category: 'Beauty & Anti-Aging',
-    description: 'Introducing NAD PLUS Cellular Prime, a pinnacle of anti-aging science designed for those who seek to preserve their youthfulness from the inside out. This luxurious, high-potency compound formula provides internal conditioning and external nourishment through a multi-benefit, all-in-one solution. By activating cellular vitality and providing powerful antioxidant defense, Cellular Prime helps you achieve profound anti-aging and youth-preserving results.',
+    description: 'Introducing Cellular AGE- Bright Complex, a pinnacle of anti-aging science designed for those who seek to preserve their youthfulness from the inside out. This luxurious, high-potency compound formula provides internal conditioning and external nourishment through a multi-benefit, all-in-one solution. By activating cellular vitality and providing powerful antioxidant defense, Cellular AGE- Bright Complex helps you achieve profound anti-aging and youth-preserving results.',
     benefits: [
       'Cellular Activation: Works at the cellular level to rejuvenate and energize your body from its very foundation',
       'Internal Anti-Aging: Promotes the body\'s own endogenous anti-aging and conditioning processes for sustainable, long-term results',
