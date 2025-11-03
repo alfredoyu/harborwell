@@ -40,14 +40,26 @@ const Contact: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 to-purple-600 text-white py-20">
+      <section className="relative py-20 text-white">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(/images/e5547271aa7717b9c3e97c5e0dcbe0d5.jpg)'
+          }}
+        />
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-black bg-opacity-40" />
+        
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="relative z-10">
           <h1 className="text-5xl font-bold mb-6">
             {getTranslation('contactTitle', appState.language)}
           </h1>
           <p className="text-xl max-w-3xl mx-auto">
             {getTranslation('contactDesc', appState.language)}
           </p>
+          </div>
         </div>
       </section>
 
