@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { ArrowLeft, CreditCard, Lock, CheckCircle, User, MapPin, Mail, Phone } from 'lucide-react';
+import { ArrowLeft, CreditCard, Lock, CheckCircle, User, MapPin, Mail, Phone, X } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useApp } from '../context/AppContext';
 import { convertPrice, formatPrice } from '../utils/currency';
@@ -11,6 +11,7 @@ const Checkout: React.FC = () => {
   const navigate = useNavigate();
   const [isProcessing, setIsProcessing] = useState(false);
   const [orderComplete, setOrderComplete] = useState(false);
+  const [showProcessingModal, setShowProcessingModal] = useState(false);
   
   const [formData, setFormData] = useState({
     // Personal Information
@@ -63,20 +64,31 @@ const Checkout: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsProcessing(true);
+    setShowProcessingModal(true);
     
-    // Simulate payment processing
-    await new Promise(resolve => setTimeout(resolve, 3000));
-    
-    setOrderComplete(true);
-    setIsProcessing(false);
-    
-    // Clear cart after successful order
-    setTimeout(() => {
-      dispatch({ type: 'CLEAR_CART' });
-      navigate('/');
-    }, 3000);
+    // Simulate payment processing delay
+    setTimeout(async () => {
+      setIsProcessing(true);
+      setShowProcessingModal(false);
+      
+      // Additional processing time
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
+      setOrderComplete(true);
+      setIsProcessing(false);
+      
+      // Clear cart after successful order
+      setTimeout(() => {
+        dispatch({ type: 'CLEAR_CART' });
+        navigate('/');
+      }, 3000);
+    }, 2000);
   };
+
+  const closeProcessingModal = () => {
+    setShowProcessingModal(false);
+  };
+    
 
   if (cartState.items.length === 0 && !orderComplete) {
     return (
@@ -123,6 +135,28 @@ const Checkout: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 py-8">
+      {/* Processing Modal */}
+      {showProcessingModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white p-8 rounded-xl shadow-2xl max-w-md w-full mx-4">
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="text-xl font-semibold text-gray-900">处理订单</h3>
+              <button
+                onClick={closeProcessingModal}
+                className="text-gray-400 hover:text-gray-600 transition-colors"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+            <div className="text-center">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+              <p className="text-lg text-gray-700 mb-4">我们正在处理您的订单</p>
+              <p className="text-sm text-gray-500">请稍候，不要关闭此页面...</p>
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-8">
           <Link
