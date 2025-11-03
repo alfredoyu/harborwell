@@ -213,16 +213,6 @@ const ProductDetail: React.FC = () => {
                   <ShoppingCart className="h-5 w-5" />
                   <span>Add to Cart</span>
                 </button>
-                <button
-                  disabled={!product.inStock}
-                  className={`px-8 py-4 rounded-lg font-semibold transition-colors ${
-                    product.inStock
-                      ? 'bg-gray-900 text-white hover:bg-gray-800'
-                      : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                  }`}
-                >
-                  Buy Now
-                </button>
               </div>
             </div>
 
