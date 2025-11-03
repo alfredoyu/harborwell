@@ -90,8 +90,6 @@ const Footer: React.FC = () => {
             <div className="flex items-center space-x-4 mt-4 md:mt-0">
               <span className="text-gray-400 text-sm">FDA Registered</span>
               <span className="text-gray-400 text-sm">•</span>
-              <span className="text-gray-400 text-sm">GMP Certified</span>
-              <span className="text-gray-400 text-sm">•</span>
               <span className="text-gray-400 text-sm">Third-Party Tested</span>
             </div>
           </div>

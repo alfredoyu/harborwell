@@ -25,7 +25,6 @@ const About: React.FC = () => {
 
   const certifications = [
     { name: "FDA Registered", description: "Facility #12345678" },
-    { name: "GMP Certified", description: "Good Manufacturing Practices" },
     { name: "NSF International", description: "Third-party testing" },
     { name: "ISO 9001:2015", description: "Quality management systems" },
     { name: "HACCP Certified", description: "Food safety management" },
@@ -114,7 +113,7 @@ const About: React.FC = () => {
                 <p>
                   Our 50,000 square foot research and manufacturing facility represents the pinnacle 
                   of supplement production technology. Located in Casper, Wyoming, our FDA-registered 
-                  facility operates under strict GMP guidelines to ensure every product meets our 
+                  facility operates under strict quality guidelines to ensure every product meets our 
                   exacting standards.
                 </p>
                 <p>

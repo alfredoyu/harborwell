@@ -177,7 +177,7 @@ const Home: React.FC = () => {
                     {appState.language === 'EN' ? 'FDA Registered' : 'FDA注册'}
                   </h3>
                   <p className="text-sm text-gray-600 font-serif font-light">
-                    {appState.language === 'EN' ? 'GMP certified facility' : 'GMP认证设施'}
+                    {appState.language === 'EN' ? 'FDA registered facility' : 'FDA注册设施'}
                   </p>
                 </div>
               </div>
