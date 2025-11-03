@@ -45,7 +45,7 @@ const About: React.FC = () => {
       <section className="bg-gradient-to-br from-blue-50 to-purple-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-5xl font-bold text-gray-900 mb-6">About HARBORWELL</h1>
+            <h1 className="text-5xl font-bold text-gray-900 mb-6">About HarborWell</h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Pioneering the future of health through science-backed nutrition and innovative supplement technology.
             </p>
@@ -61,7 +61,7 @@ const About: React.FC = () => {
               <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
               <div className="space-y-6 text-lg text-gray-700">
                 <p>
-                  Founded in 2024, HARBORWELL emerged from a simple yet powerful vision: to bridge the gap 
+                  Founded in 2024, HarborWell emerged from a simple yet powerful vision: to bridge the gap 
                   between cutting-edge nutritional science and accessible health solutions. Our journey began 
                   when our founding team of biochemists and nutrition experts recognized the need for 
                   supplements that truly deliver on their promises.
@@ -73,7 +73,7 @@ const About: React.FC = () => {
                   and manufactured to the highest quality standards.
                 </p>
                 <p>
-                  Today, HARBORWELL stands as a trusted name in the health and wellness industry, serving 
+                  Today, HarborWell stands as a trusted name in the health and wellness industry, serving 
                   customers worldwide with products that make a real difference in their lives.
                 </p>
               </div>
@@ -138,7 +138,7 @@ const About: React.FC = () => {
             <div className="order-2 lg:order-1">
               <img
                 src="https://images.pexels.com/photos/3735747/pexels-photo-3735747.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="HARBORWELL Laboratory"
+                alt="HarborWell Laboratory"
                 className="rounded-xl shadow-lg"
               />
             </div>
