@@ -45,7 +45,7 @@ const Contact: React.FC = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(/images/9a39688615c0f49d4d7c540e28982718.jpg)'
+            backgroundImage: 'url(/images/e5547271aa7717b9c3e97c5e0dcbe0d5.jpg)'
           }}
         />
         {/* Overlay for better text readability */}
