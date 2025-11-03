@@ -56,7 +56,7 @@ const Home: React.FC = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(/src/assets/images/9a39688615c0f49d4d7c540e28982718.jpg)'
+            backgroundImage: 'url(https://images.pexels.com/photos/3683074/pexels-photo-3683074.jpeg?auto=compress&cs=tinysrgb&w=1600)'
           }}
         />
         {/* Overlay for better text readability */}
