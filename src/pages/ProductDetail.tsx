@@ -10,6 +10,7 @@ const ProductDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const product = products.find(p => p.id === id);
   const [quantity, setQuantity] = useState(1);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [activeTab, setActiveTab] = useState('description');
   const { dispatch } = useCart();
   const { state: appState } = useApp();
@@ -64,14 +65,20 @@ const ProductDetail: React.FC = () => {
           <div className="space-y-4">
             <div className="aspect-square bg-gray-100 rounded-xl overflow-hidden">
               <img
-                src={product.image}
+                src={product.images[selectedImageIndex]}
                 alt={product.name}
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="grid grid-cols-4 gap-2">
               {product.images.map((image, index) => (
-                <div key={index} className="aspect-square bg-gray-100 rounded-lg overflow-hidden cursor-pointer hover:ring-2 hover:ring-blue-500">
+                <div 
+                  key={index} 
+                  className={`aspect-square bg-gray-100 rounded-lg overflow-hidden cursor-pointer hover:ring-2 hover:ring-blue-500 transition-all ${
+                    selectedImageIndex === index ? 'ring-2 ring-blue-500' : ''
+                  }`}
+                  onClick={() => setSelectedImageIndex(index)}
+                >
                   <img
                     src={image}
                     alt={`${product.name} ${index + 1}`}
