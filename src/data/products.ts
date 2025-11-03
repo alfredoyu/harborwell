@@ -8,7 +8,12 @@ export const products: Product[] = [
     price: 49.99,
     originalPrice: 69.99,
     image: '/src/assets/images/1.png',
-    images: ['/src/assets/images/1.png'],
+    image: '/src/assets/images/1.jpg',
+    images: [
+      '/src/assets/images/1.jpg',
+      '/src/assets/images/2.jpg', 
+      '/src/assets/images/3.jpg'
+    ],
     category: 'Weight Management',
     description: 'Slimbody Metabo Probiotic is a revolutionary dietary supplement designed to support weight loss and metabolic health. Formulated with a synergistic blend of natural ingredients that work together to manage the metabolism of sugar, fat, and cholesterol. Developed by a top U.S. research team with 15 years of experience and FDA certified.',
     benefits: [
@@ -60,7 +65,12 @@ export const products: Product[] = [
     price: 89.99,
     originalPrice: 119.99,
     image: '/src/assets/images/2.png',
-    images: ['/src/assets/images/2.png'],
+    image: '/src/assets/images/1.jpg',
+    images: [
+      '/src/assets/images/1.jpg',
+      '/src/assets/images/2.jpg',
+      '/src/assets/images/3.jpg'
+    ],
     category: 'Beauty & Anti-Aging',
     description: 'Introducing Cellular AGE- Bright Complex, a pinnacle of anti-aging science designed for those who seek to preserve their youthfulness from the inside out. This luxurious, high-potency compound formula provides internal conditioning and external nourishment through a multi-benefit, all-in-one solution. By activating cellular vitality and providing powerful antioxidant defense, Cellular AGE- Bright Complex helps you achieve profound anti-aging and youth-preserving results.',
     benefits: [
