@@ -76,34 +76,9 @@ const Home: React.FC = () => {
               {getTranslation('heroDescription', appState.language)}
             </p>
             
-            {/* Newsletter Signup */}
-            <div className="max-w-md mx-auto mb-12 backdrop-blur-sm bg-white bg-opacity-10 p-6 rounded-xl">
-              <form onSubmit={handleSubscribe} className="flex rounded-lg shadow-xl">
-                <input
-                  type="email"
-                  placeholder={getTranslation('emailPlaceholder', appState.language)}
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="flex-1 px-6 py-4 rounded-l-lg border-0 focus:ring-2 focus:ring-green-500 focus:outline-none bg-white bg-opacity-90 backdrop-blur-sm"
-                />
-                <button 
-                  type="submit"
-                  className="bg-primary-600 text-white px-8 py-4 rounded-r-lg hover:bg-primary-700 transition-colors font-semibold shadow-lg"
-                >
-                  {getTranslation('subscribe', appState.language)}
-                </button>
-              </form>
-              {subscribed && (
-                <p className="mt-2 text-green-300 text-sm font-medium drop-shadow">
-                  {appState.language === 'EN' ? 'Successfully subscribed!' : '订阅成功！'}
-                </p>
-              )}
-            </div>
-
             <Link
               to="/products"
-              className="inline-flex items-center space-x-2 bg-primary-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary-700 transition-colors shadow-xl hover:shadow-2xl transform hover:scale-105"
+              className="inline-flex items-center space-x-2 bg-primary-400 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary-500 transition-colors shadow-xl hover:shadow-2xl transform hover:scale-105"
             >
               <span>{getTranslation('shopNow', appState.language)}</span>
               <ArrowRight className="h-5 w-5" />
@@ -218,24 +193,24 @@ const Home: React.FC = () => {
             
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
-                <div className="bg-primary-500 p-8 rounded-xl text-white">
+                <div className="bg-primary-400 p-8 rounded-xl text-white">
                   <Award className="h-12 w-12 mb-4" />
                   <h3 className="text-2xl font-bold mb-2">15+</h3>
                   <p className="font-serif font-light">{appState.language === 'EN' ? 'Patents & Certifications' : '专利和认证'}</p>
                 </div>
-                <div className="bg-secondary-500 p-8 rounded-xl text-white">
+                <div className="bg-secondary-400 p-8 rounded-xl text-white">
                   <Users className="h-12 w-12 mb-4" />
                   <h3 className="text-2xl font-bold mb-2">50K+</h3>
                   <p className="font-serif font-light">{appState.language === 'EN' ? 'Happy Customers' : '满意客户'}</p>
                 </div>
               </div>
               <div className="space-y-4 pt-8">
-                <div className="bg-primary-600 p-8 rounded-xl text-white">
+                <div className="bg-primary-500 p-8 rounded-xl text-white">
                   <Microscope className="h-12 w-12 mb-4" />
                   <h3 className="text-2xl font-bold mb-2">25+</h3>
                   <p className="font-serif font-light">{appState.language === 'EN' ? 'Clinical Studies' : '临床研究'}</p>
                 </div>
-                <div className="bg-secondary-600 p-8 rounded-xl text-white">
+                <div className="bg-secondary-500 p-8 rounded-xl text-white">
                   <Shield className="h-12 w-12 mb-4" />
                   <h3 className="text-2xl font-bold mb-2">100%</h3>
                   <p className="font-serif font-light">{appState.language === 'EN' ? 'Third-Party Tested' : '第三方检测'}</p>

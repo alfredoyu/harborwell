@@ -104,7 +104,7 @@ const About: React.FC = () => {
             <div className="order-2 lg:order-1">
               <img
                 src="https://images.pexels.com/photos/3735747/pexels-photo-3735747.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="HarborWell Laboratory"
+                alt="HARBORWELL Laboratory"
                 className="rounded-xl shadow-lg"
               />
             </div>

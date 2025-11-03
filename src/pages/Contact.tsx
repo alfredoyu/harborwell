@@ -82,19 +82,6 @@ const Contact: React.FC = () => {
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="bg-green-100 p-3 rounded-lg">
-                  <Phone className="h-6 w-6 text-green-600" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900">
-                    {appState.language === 'EN' ? 'Phone' : '电话'}
-                  </h3>
-                  <p className="text-gray-600">1-800-HARBOR-1</p>
-                  <p className="text-gray-600">(1-800-427-2671)</p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
                 <div className="bg-purple-100 p-3 rounded-lg">
                   <MapPin className="h-6 w-6 text-purple-600" />
                 </div>

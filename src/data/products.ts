@@ -46,7 +46,7 @@ export const products: Product[] = [
     reviews: 428,
     specifications: {
       capsules: 60,
-      shelfLife: '3 years',
+      shelfLife: '2 years',
       storage: 'Room temperature'
     },
     targetAudience: [
@@ -96,7 +96,7 @@ export const products: Product[] = [
     rating: 4.8,
     reviews: 234,
     specifications: {
-      capsules: 30,
+      capsules: 60,
       shelfLife: '2 years',
       storage: 'Cool, dry place away from direct sunlight'
     },
